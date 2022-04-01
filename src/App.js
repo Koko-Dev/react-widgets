@@ -4,7 +4,7 @@ import Accordion from "./components/Accordion";
 const questions = [
 	{
 		question: 'Which instructors are the best JavaScript instructors?',
-		answer: 'Traversy, Max and Jonas'
+		answer: 'Traversy, Max and Jonas.'
 	},
 	{
 		question: 'What course subjects do I take to become a developer?',
