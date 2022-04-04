@@ -1,17 +1,22 @@
 import React from 'react';
 
 const Accordion = ({ questions }) => {
-	const renderedQuestions = questions.map((question) => {
+	const onTitleClick = (index) => {
+		console.log('Title clicked', index);
+	}
+
+	const renderedQuestions = questions.map((question, index) => {
 		return (
-			<div key={question.question}>
-				<div className="title active">
+			<React.Fragment key={question.question}>
+				<div className="title active"
+				     onClick={() => onTitleClick(index)}>
 					<i className="dropdown icon"></i>
 					{question.question}
 				</div>
 				<div className="content active">
 					<p>{question.answer}</p>
 				</div>
-			</div>
+			</React.Fragment>
 		)
 	})
 
