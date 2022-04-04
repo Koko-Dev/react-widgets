@@ -25,7 +25,10 @@ const Accordion = ({ questions }) => {
 		)
 	})
 
-	return <div className="ui styled accordion">{renderedQuestions}</div>
+	return <div className="ui styled accordion">
+		{renderedQuestions}
+		<h1>{activeIndex}</h1>
+	</div>
 
 }
 
