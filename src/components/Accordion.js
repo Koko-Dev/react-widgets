@@ -11,14 +11,17 @@ const Accordion = ({ questions }) => {
 	}
 
 	const renderedQuestions = questions.map((question, index) => {
+		// Todo: If index == activeIndex then add className 'active'
+		const active = index === activeIndex ? 'active' : '';
+
 		return (
 			<React.Fragment key={question.question}>
-				<div className="title active"
+				<div className={`title ${active}`}
 				     onClick={() => onTitleClick(index)}>
 					<i className="dropdown icon"></i>
 					{question.question}
 				</div>
-				<div className="content active">
+				<div className={`content ${active}`}>
 					<p>{question.answer}</p>
 				</div>
 			</React.Fragment>
@@ -27,7 +30,6 @@ const Accordion = ({ questions }) => {
 
 	return <div className="ui styled accordion">
 		{renderedQuestions}
-		<h1>{activeIndex}</h1>
 	</div>
 
 }
