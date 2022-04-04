@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 
 const Accordion = ({ questions }) => {
+	// Todo: Initialize a new piece of state
+	const [activeIndex, setActiveIndex] = useState(null);
+
 	const onTitleClick = (index) => {
-		console.log('Title clicked', index);
+		// Todo: Update a new piece of state everytime a user
+		//  clicks on a question
+		setActiveIndex(index);
 	}
 
 	const renderedQuestions = questions.map((question, index) => {
