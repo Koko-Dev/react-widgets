@@ -5,8 +5,6 @@ const Search = () => {
 	const [term, setTerm] = useState('programming');
 	const [results, setResults] = useState([]);
 
-	console.log(results);
-
 	useEffect(() => {
 		//	 step: Method 1
 		const search = async () => {
@@ -19,7 +17,7 @@ const Search = () => {
 					srsearch: term,
 				},
 			})
-			
+
 			setResults(data.query.search);
 		}
 
