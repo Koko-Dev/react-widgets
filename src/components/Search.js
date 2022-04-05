@@ -6,10 +6,18 @@ const Search = () => {
 
 	useEffect(() => {
 		//	 step: Method 1
-		/*const search = async () => {
-			await axios.get('asldkfj');
+		const search = async () => {
+			await axios.get('https://en.wikipedia.org/w/api.php', {
+				params: {
+					action: 'query',
+					list: 'search',
+					origin: '*',
+					format: 'json',
+					srsearch: term,
+				},
+			})
 		}
-		search();*/
+		search();
 
 		//	step: Method 2 - IFFE
 		// note: Only take this approach if easier to read
@@ -18,10 +26,10 @@ const Search = () => {
 		})();*/
 
 		//	 step: Method 3 - PROMISES
-		axios.get('asldkfj')
+		/*axios.get('asldkfj')
 			.then((response) => {
 				console.log(response.data);
-			})
+			})*/
 	}, [term])
 
 
