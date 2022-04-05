@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Search = () => {
-	const [term, setTerm] = useState('');
+	const [term, setTerm] = useState('programming');
 	const [results, setResults] = useState([]);
+
+	console.log(results);
 
 	useEffect(() => {
 		//	 step: Method 1
@@ -17,29 +19,11 @@ const Search = () => {
 					srsearch: term,
 				},
 			})
-
-		/*	Todo:  Use data to update result piece of state
-				Note: This will cause our component to rerender so that we
-					   can then access the results array down inside of
-					    our JSX block and render out our list */
 			setResults(data);
 		}
+
 		search();
-
-		//	step: Method 2 - IFFE
-		// note: Only take this approach if easier to read
-	/*	(async () => {
-			await axios.get('asldkfj');
-		})();*/
-
-		//	 step: Method 3 - PROMISES
-		/*axios.get('asldkfj')
-			.then((response) => {
-				console.log(response.data);
-			})*/
 	}, [term])
-
-
 
 	return (
 		<div>
