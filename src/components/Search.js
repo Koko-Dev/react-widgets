@@ -24,6 +24,21 @@ const Search = () => {
 		search();
 	}, [term])
 
+	// Todo: Map through the list of results
+	const renderedResults = results.map((result) => {
+		return (
+			<div className="item">
+				<div className="content">
+					<div className="header">
+						{result.title}
+					</div>
+					{result.snippet}
+				</div>
+			</div>
+		)
+	})
+
+
 	return (
 		<div>
 			<div className="ui form">
@@ -39,6 +54,10 @@ const Search = () => {
 				{/* /.field */}
 			</div>
 			{/* /.ui form */}
+			<div className="ui celled list">
+				{renderedResults}
+			</div>
+			{/* /.ui celled list */}
 		</div>
 	)
 }
