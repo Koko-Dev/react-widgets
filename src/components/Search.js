@@ -5,7 +5,7 @@ const Search = () => {
 	const [term, setTerm] = useState('');
 
 	useEffect(() => {
-		//	 step: Method 1 => RECOMMENDED
+		//	 step: Method 1
 		/*const search = async () => {
 			await axios.get('asldkfj');
 		}
@@ -22,10 +22,6 @@ const Search = () => {
 			.then((response) => {
 				console.log(response.data);
 			})
-
-
-
-
 	}, [term])
 
 
