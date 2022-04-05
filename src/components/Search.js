@@ -17,6 +17,12 @@ const Search = () => {
 					srsearch: term,
 				},
 			})
+
+		/*	Todo:  Use data to update result piece of state
+				Note: This will cause our component to rerender so that we
+					   can then access the results array down inside of
+					    our JSX block and render out our list */
+			setResults(data);
 		}
 		search();
 
