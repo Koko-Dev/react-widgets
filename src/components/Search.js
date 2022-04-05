@@ -8,7 +8,7 @@ const Search = () => {
 	useEffect(() => {
 		//	 step: Method 1
 		const search = async () => {
-			await axios.get('https://en.wikipedia.org/w/api.php', {
+			const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
 				params: {
 					action: 'query',
 					list: 'search',
