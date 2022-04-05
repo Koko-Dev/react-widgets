@@ -4,13 +4,31 @@ import axios from 'axios';
 const Search = () => {
 	const [term, setTerm] = useState('');
 
-	console.log('I RUN WITH EVERY RENDER');
-
 	useEffect(() => {
-		// console.log('I run after every render and at initial render');
-		// console.log('I run once')
-		console.log('I just run');
+		//	 step: Method 1 => RECOMMENDED
+		/*const search = async () => {
+			await axios.get('asldkfj');
+		}
+		search();*/
+
+		//	step: Method 2 - IFFE
+		// note: Only take this approach if easier to read
+	/*	(async () => {
+			await axios.get('asldkfj');
+		})();*/
+
+		//	 step: Method 3 - PROMISES
+		axios.get('asldkfj')
+			.then((response) => {
+				console.log(response.data);
+			})
+
+
+
+
 	}, [term])
+
+
 
 	return (
 		<div>
