@@ -26,15 +26,16 @@ const Search = () => {
 
 	// Todo: Map through the list of results
 	const renderedResults = results.map((result) => {
-		const regex = /(<([^>]+)>)/gi;
-		const cleanSnippet = result.snippet.replace(regex, '');
+		// const regex = /(<([^>]+)>)/gi;
+		// const cleanSnippet = result.snippet.replace(regex, '');
 		return (
 			<div key={result.pageid} className="item">
 				<div className="content">
 					<div className="header">
 						{result.title}
 					</div>
-					{cleanSnippet}
+					{/*{cleanSnippet}*/}
+					<span dangerouslySetInnerHTML={{__html: result.snippet}}></span>
 				</div>
 			</div>
 		)
