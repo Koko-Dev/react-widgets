@@ -21,7 +21,10 @@ const Search = () => {
 			setResults(data.query.search);
 		}
 
-		search();
+		if (term) {
+			search();
+		}
+		
 	}, [term])
 
 	// Todo: Map through the list of results
