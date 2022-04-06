@@ -30,6 +30,13 @@ const Search = () => {
 		const cleanSnippet = result.snippet.replace(regex, '');
 		return (
 			<div key={result.pageid} className="item">
+				<div className="right floated content">
+					<a href={`https://en.wikipedia.org/?curid=${result.pageid}`}
+					   target="_blank"
+					   className="ui button">Go</a>
+					{/* /.ui button */}
+				</div>
+				{/* /.right floated content */}
 				<div className="content">
 					<div className="header">
 						{result.title}
