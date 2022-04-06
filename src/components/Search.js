@@ -21,10 +21,13 @@ const Search = () => {
 			setResults(data.query.search);
 		}
 
-		if (term) {
-			search();
-		}
-		
+		setTimeout(() => {
+			if (term) {
+				search();
+			}
+		}, 500)
+
+
 	}, [term])
 
 	// Todo: Map through the list of results
