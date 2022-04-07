@@ -9,8 +9,6 @@ const Search = () => {
 	// note: The only thing useEffect allows to
 	//  be returned is another function
 	useEffect(() => {
-
-		//	 step: Method 1
 		const search = async () => {
 			const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
 				params: {
