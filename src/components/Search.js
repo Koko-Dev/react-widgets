@@ -3,7 +3,32 @@ import axios from 'axios';
 
 const Search = () => {
 	const [term, setTerm] = useState('programming');
+	const [debouncedTerm, setDebouncedTerm] = useState(term);
 	const [results, setResults] = useState([]);
+
+	/*
+		FIXME: On render, there are two calls to the API instead of one
+			-- Part 1:  Anytime that we update term, thanks to
+			user typing inside that input, we are going to
+			setup a timer to update debouncedTerm.
+			-- Part 2.  And if a user then types something else,
+			 we are going to cancel the previous timer, immediately
+			  update term and set up a new timer to update debouncedTerm.
+	*/
+	useEffect(() => {
+
+		// Fixme: Part 1
+		// step: 1. Whenever we execute setTimeout, we update debouncedTerm
+		const timerId = setTimeout(() => {
+			setDebouncedTerm(term);
+		}, 1000)
+
+		// step: 2. Return a cleanup function that is going to cancel that timer
+		return () => {
+			clearTimeout(timerId);
+		}
+
+	}, [term])
 
 
 	// note: The only thing useEffect allows to
