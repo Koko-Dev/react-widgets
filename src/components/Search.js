@@ -37,7 +37,7 @@ const Search = () => {
 			clearTimeout(timeoutId);
 		}
 
-	}, [term])
+	}, [term, results.length])
 
 	// Todo: Map through the list of results
 	const renderedResults = results.map((result) => {
