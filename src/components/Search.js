@@ -6,16 +6,6 @@ const Search = () => {
 	const [debouncedTerm, setDebouncedTerm] = useState(term);
 	const [results, setResults] = useState([]);
 
-	/*
-		FIXME: On render, there are two calls to the API instead of one
-			-- Part 1:  Anytime that we update term, thanks to
-			user typing inside that input, we are going to
-			setup a timer to update debouncedTerm.
-			-- Part 2.  And if a user then types something else,
-			 we are going to cancel the previous timer, immediately
-			  update term and set up a new timer to update debouncedTerm.
-	*/
-
 	// Note: This useEffect will run anytime term changes
 	useEffect(() => {
 		// step: 1. Whenever we execute setTimeout, we update debouncedTerm
