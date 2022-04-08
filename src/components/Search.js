@@ -15,11 +15,12 @@ const Search = () => {
 			 we are going to cancel the previous timer, immediately
 			  update term and set up a new timer to update debouncedTerm.
 	*/
-	useEffect(() => {
 
-		// Fixme: Part 1
+	// Note: This useEffect will run anytime term changes
+	useEffect(() => {
 		// step: 1. Whenever we execute setTimeout, we update debouncedTerm
 		const timerId = setTimeout(() => {
+			// note: debouncedTerm changes and useEffect(_, [debouncedTerm]) fires
 			setDebouncedTerm(term);
 		}, 1000)
 
@@ -27,12 +28,9 @@ const Search = () => {
 		return () => {
 			clearTimeout(timerId);
 		}
-
 	}, [term])
 
-
-	// note: The only thing useEffect allows to
-	//  be returned is another function
+	// note: This useEffect will run anytime debouncedTerm changes
 	useEffect(() => {
 		const search = async () => {
 			const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
@@ -41,28 +39,13 @@ const Search = () => {
 					list: 'search',
 					origin: '*',
 					format: 'json',
-					srsearch: term,
+					srsearch: debouncedTerm,
 				},
 			})
-
 			setResults(data.query.search);
 		}
-
-		if (term && !results.length) {
-			search();
-		}
-
-		const timeoutId = setTimeout(() => {
-			if (term) {
-				search();
-			}
-		}, 1000);
-
-		return () =>  {
-			clearTimeout(timeoutId);
-		}
-
-	}, [term, results.length])
+		search();
+	}, [debouncedTerm])
 
 	// Todo: Map through the list of results
 	const renderedResults = results.map((result) => {
