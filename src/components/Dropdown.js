@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const Dropdown = ({ options }) => {
 	const renderedOptions = options.map(option => {
