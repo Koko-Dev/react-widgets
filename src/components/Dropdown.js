@@ -14,6 +14,17 @@ const Dropdown = ({ options }) => {
 			<div className="field">
 				<label className="label">Select a Color</label>
 				{/* /.label */}
+				<div className="ui selection dropdown visible active">
+					<i className="dropdown icon"></i>
+					{/* /.dropdown icon */}
+					<div className="text">Select Color</div>
+					{/* /.text */}
+					<div className="menu visible transition">
+						{renderedOptions}
+					</div>
+					{/* /.menu visible transition */}
+				</div>
+				{/* /.ui selection dropdown visible active */}
 			</div>
 			{/* /.field */}
 		</div>
