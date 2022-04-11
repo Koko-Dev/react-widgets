@@ -10,7 +10,8 @@ const Search = () => {
 	useEffect(() => {
 		// step: 1. Whenever we execute setTimeout, we update debouncedTerm
 		const timerId = setTimeout(() => {
-			// note: debouncedTerm changes and useEffect(_, [debouncedTerm]) fires
+			// note: debouncedTerm changes and useEffect(_, [debouncedTerm]) fires,
+			//  thereby running a search on value of debouncedTerm
 			setDebouncedTerm(term);
 		}, 1000)
 
