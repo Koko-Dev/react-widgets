@@ -1,7 +1,23 @@
 import React from 'react';
 
 const Dropdown = ({ options }) => {
-	return <h1>Dropdown</h1>
+	const renderedOptions = options.map(option => {
+		return (
+			<div key={option.value} className="item">
+				{option.label}
+			</div>
+		)
+	})
+
+	return (
+		<div className="ui form">
+			<div className="field">
+				<label className="label">Select a Color</label>
+				{/* /.label */}
+			</div>
+			{/* /.field */}
+		</div>
+	)
 }
 
 export default Dropdown;
