@@ -6,12 +6,9 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 
 	useEffect(() => {
 		document.body.addEventListener('click', (event) => {
-			// important: event.target will return the html element that was clicked on
-			// console.log(event.target);
-
-			/*TODO: event.target is the element clicked on; if
-			   ref.current contains anything inside of div.ui.form,
-			    then we will not setOpen to false
+			/*TODO: Check to see if the element that was
+			   clicked on (event.target) is inside of
+			   ref.current (div.ui.form).  If it is, return early.
 				 */
 			if (ref.current.contains(event.target)) return;
 			setOpen(false);
@@ -31,7 +28,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 			</div>
 		)
 	})
-
+	
 	return (
 		<div ref={ref} className="ui form">
 			<div className="field">
