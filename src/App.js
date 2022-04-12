@@ -33,11 +33,11 @@ const options = [
 		value: 'green'
 	},
 	{
-		label: 'The Color Blue',
+		label: 'A Shade of Blue',
 		value: 'blue'
 	},
 	{
-		label: 'The Color Pink',
+		label: 'A Pretty Pink',
 		value: 'pink'
 	}
 ]
