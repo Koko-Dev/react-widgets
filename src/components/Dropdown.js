@@ -9,6 +9,10 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 			/*TODO: Check to see if the element that was
 			   clicked on (event.target) is inside of
 			   ref.current (div.ui.form).  If it is, return early.
+		    Note: When we return early, this piece of code will run and dropdown will close:
+		    Code:
+		     <div className={`ui selection dropdown ${open ? 'visible active' : ''}`}
+		     onClick={() => setOpen(!open)}>...</div>
 				 */
 			if (ref.current.contains(event.target)) return;
 			setOpen(false);
@@ -28,7 +32,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 			</div>
 		)
 	})
-	
+
 	return (
 		<div ref={ref} className="ui form">
 			<div className="field">
