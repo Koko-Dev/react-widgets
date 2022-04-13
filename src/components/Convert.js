@@ -15,7 +15,7 @@ const Convert = ({ language, text }) => {
 				params: {
 					q: text,
 					target: language.value,
-					key: 'Google Translation API Key'
+					key: 'Google API Translation Key'
 				}
 			})
 
@@ -23,12 +23,14 @@ const Convert = ({ language, text }) => {
 		};
 
 		doTranslation()
-
-
-
-
 	}, [language, text])
-	return <div />
+
+	return (
+		<div>
+			<h1 className="ui header">{translated}</h1>
+			{/* /.ui header */}
+		</div>
+	)
 }
 
 export default Convert;
