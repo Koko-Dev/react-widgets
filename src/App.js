@@ -37,8 +37,8 @@ const options = [
 		value: 'blue'
 	},
 	{
-		label: 'A Pretty Pink',
-		value: 'pink'
+		label: 'A Pretty Purple',
+		value: 'purple'
 	}
 ]
 
