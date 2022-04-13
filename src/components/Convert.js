@@ -3,6 +3,7 @@ import axios from "axios";
 
 const Convert = ({ language, text }) => {
 	const [translated, setTranslated] = useState('');
+	const [debouncedText, setDebouncedText] = useState(text);
 
 	useEffect(() => {
 		const url = 'https://translation.googleapis.com/language/translate/v2';
@@ -15,7 +16,7 @@ const Convert = ({ language, text }) => {
 				params: {
 					q: text,
 					target: language.value,
-					key: 'Google API Translation Key'
+					key: 'Google Translation API KEY'
 				}
 			})
 
