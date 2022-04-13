@@ -7,12 +7,36 @@ const options = [
 		value: 'af'
 	},
 	{
+		label: 'Albanian',
+		value: 'sq'
+	},
+	{
 		label: 'Arabic',
 		value: 'ar'
 	},
 	{
+		label: 'Bosnian',
+		value: 'bs'
+	},
+	{
+		label: 'Catalan',
+		value: 'ca'
+	},
+	{
+		label: 'Dutch',
+		value: 'nl'
+	},
+	{
 		label: 'Hindi',
 		value: 'hi'
+	},
+	{
+		label: 'Finnish',
+		value: 'fi'
+	},
+	{
+		label: 'German',
+		value: 'de'
 	}
 ];
 
