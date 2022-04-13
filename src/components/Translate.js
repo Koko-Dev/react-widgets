@@ -69,7 +69,7 @@ const Translate = () => {
 			<h3 className="ui header">Output</h3>
 			{/* /.ui header */}
 
-			<Convert />
+			<Convert text={text} language={language} />
 		</div>
 	)
 }
