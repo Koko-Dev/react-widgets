@@ -70,7 +70,7 @@ const Dropdown = ({options, selected, onSelectedChange}) => {
 				     onClick={() => setOpen(!open)}>
 					<i className="dropdown icon"></i>
 					{/* /.dropdown icon */}
-					<div className="text">{selected.label}</div>
+					<div className="text" style={{color: selected.value}}>{selected.label}</div>
 					{/* /.text */}
 					<div className={`menu ${open ? 'visible transition' : ''}`}>
 						{renderedOptions}
