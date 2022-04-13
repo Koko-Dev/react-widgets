@@ -6,25 +6,33 @@ const Convert = ({ language, text }) => {
 	const [debouncedText, setDebouncedText] = useState(text);
 
 	useEffect(() => {
-		const url = 'https://translation.googleapis.com/language/translate/v2';
+			const timerId = setTimeout(() => {
+				setDebouncedText(text);
+			}, 500);
 
-		// Todo: Make request to Google API
-		// Todo: Helper async function which makes the call to API
-		//  through axios and targets the API data property specifically
+			// note: If text piece of state changes before 500 ms timer elapses,
+			//  cancel timer in cleanup function
+			return () => {
+				clearTimeout(timerId);
+			}
+		}, [text]);
+
+	useEffect(() => {
 		const doTranslation = async () => {
+			const url = 'https://translation.googleapis.com/language/translate/v2';
 			const { data } = await axios.post(url, {}, {
 				params: {
-					q: text,
+					q: debouncedText,
 					target: language.value,
-					key: 'Google Translation API KEY'
+					key: 'Google Translations API KEY'
 				}
 			})
-
 			setTranslated(data.data.translations[0].translatedText);
 		};
 
 		doTranslation()
-	}, [language, text])
+
+	}, [language, debouncedText]);
 
 	return (
 		<div>
