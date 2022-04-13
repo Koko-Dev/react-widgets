@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
+import './Dropdown.css';
 
 const Dropdown = ({options, selected, onSelectedChange}) => {
 	const [open, setOpen] = useState(false);
@@ -46,8 +47,12 @@ const Dropdown = ({options, selected, onSelectedChange}) => {
 
 	const renderedOptions = options.map(option => {
 		if (option.value === selected.value) return null;
+		let divStyle = {
+			color: option.value
+		};
 		return (
 			<div key={option.value}
+			     style={ divStyle }
 			     className="item"
 			     onClick={() => onSelectedChange(option)}>
 				{option.label}
