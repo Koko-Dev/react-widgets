@@ -76,6 +76,9 @@ export default () => {
 			<Route path="/" >
 				<Accordion questions={questions}/>
 			</Route>
+			<Route path="/list">
+				<Search />
+			</Route>
 
 		</div>
 	)
