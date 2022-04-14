@@ -56,6 +56,12 @@ const showList = () => {
 	}
 }
 
+const showDropdown = () => {
+	if (window.location.pathname === '/dropdown') {
+		return <Dropdown />;
+	}
+}
+
 
 export default () => {
 	return (
