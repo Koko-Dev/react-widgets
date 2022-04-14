@@ -71,6 +71,7 @@ const showTranslate = () => {
 
 
 export default () => {
+	const [selected, setSelected] = useState(options[0]);
 	return (
 		<div>
 			<Route path="/" >
@@ -80,7 +81,12 @@ export default () => {
 				<Search />
 			</Route>
 			<Route path="/dropdown">
-				<Dropdown />
+				<Dropdown
+					label="Select a Color"
+					options={options}
+					selected={selected}
+					onSelectedChange={setSelected}
+				/>
 			</Route>
 			<Route path="/translate">
 				<Translate />
