@@ -4,6 +4,7 @@ import Search from "./components/Search";
 import Dropdown from "./components/Dropdown";
 import Translate from "./components/Translate";
 import Convert from "./components/Convert";
+import Route from "./components/Route";
 
 const questions = [
 	{
