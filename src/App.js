@@ -79,6 +79,9 @@ export default () => {
 			<Route path="/list">
 				<Search />
 			</Route>
+			<Route path="/translate">
+				<Translate />
+			</Route>
 
 		</div>
 	)
