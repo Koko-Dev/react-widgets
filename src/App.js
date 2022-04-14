@@ -46,7 +46,13 @@ const options = [
 
 const showAccordion = () => {
 	if (window.location.pathname === '/') {
-		return <Accordion questions={questions} />
+		return <Accordion questions={questions} />;
+	}
+};
+
+const showList = () => {
+	if (window.location.pathname === '/list') {
+		return <Search />;
 	}
 }
 
