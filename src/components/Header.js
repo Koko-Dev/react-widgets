@@ -4,17 +4,17 @@ import Link from './Link';
 const Header = () => {
 	return (
 		<div className="ui secondary pointing menu">
-			<a href="/"
-			   className="item">Accordion</a>
+			<Link href="/"
+			   className="item">Accordion</Link>
 			{/* /.item */}
-			<a href="/list"
-			   className="item">Search</a>
+			<Link href="/list"
+			   className="item">Search</Link>
 			{/* /.item */}
-			<a href="/dropdown"
-			   className="item">Dropdown</a>
+			<Link href="/dropdown"
+			   className="item">Dropdown</Link>
 			{/* /.item */}
-			<a href="/translate"
-			   className="item">Translate</a>
+			<Link href="/translate"
+			   className="item">Translate</Link>
 			{/* /.item */}
 		</div>
 	)
