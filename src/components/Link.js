@@ -21,8 +21,8 @@ const Link = ({ className, href, children }) => {
 		 */
 		const navEvent = new PopStateEvent('popstate');
 		window.dispatchEvent(navEvent);
-
 	}
+
 	return (
 		<a
 			href={href}
