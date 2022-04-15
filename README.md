@@ -3,7 +3,7 @@
 This project is a React Application which consists of four widgets:
 -- An Accordion Component
 
--- A Wikipedia API search component (Wikipedia API required)
+-- A Wikipedia API search component
 
 -- A Dropdown item selection component
 
