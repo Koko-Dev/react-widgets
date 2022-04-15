@@ -1,13 +1,13 @@
 # React-Widgets
 
-This project is a React Application which consists of components such as:
+This project is a React Application which consists of four widgets:
 -- An Accordion Component
 
--- A Wikipedia API serach component
+-- A Wikipedia API search component (Wikipedia API required)
 
 -- A Dropdown item selection component
 
--- A Google Translate API componet
+-- A Google Translate API component (Google Translate API required)
 
 ## Available Scripts
 
