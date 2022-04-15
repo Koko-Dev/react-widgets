@@ -6,7 +6,7 @@ import Translate from "./components/Translate";
 import Route from "./components/Route";
 import Header from "./components/Header";
 
-
+// ./list
 const questions = [
 	{
 		question: 'Which instructors are the best JavaScript instructors?',
@@ -26,7 +26,7 @@ const questions = [
 	}
 ];
 
-// For Dropdown
+// for ./dropdown
 const options = [
 	{
 		label: 'The Color Red',
