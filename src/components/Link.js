@@ -5,6 +5,9 @@ const Link = ({ className, href, children }) => {
 	//	Todo: Prevent a full page reload
 		event.preventDefault();
 
+		// goal: Change the URL without changing the content
+		window.history.pushState({}, '', href);
+
 	}
 	return (
 		<a
